@@ -180,7 +180,7 @@ function serializeFlatObject(form: Record<string, never>): string {
   return JSON.stringify(values);
 }
 
-function deserializeFlatObject(value: string): Record<string, never> {
+export function deserializeFlatObject(value: string): Record<string, never> {
   const values = JSON.parse(value) as never[];
   const flattenedForm: Record<string, never> = {};
   flattenedKeys.forEach((key, index) => {
